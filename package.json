@@ -8,8 +8,11 @@
     "name": "Andrè Hagen",
     "url": "https://github.com/KodeAndre"
   },
-  "version": "1.0.3",
-  "keywords": ["Old School Runescape", "OSRS"],
+  "version": "1.0.4",
+  "keywords": [
+    "Old School Runescape",
+    "OSRS"
+  ],
   "module": "index.ts",
   "devDependencies": {
     "@types/node": "^18.7.13",
