@@ -1,1 +1,4 @@
-fetch('https://jsonplaceholder.typicode.com/todos/1').then((res) => res.json()).then((res) => console.log(res));
+export async function parser(url: string) {
+  if (typeof url !== "string") throw new TypeError("osrs-hiscores-parser requires a string.")
+  return await fetch(url).then((res) => res.json());
+}

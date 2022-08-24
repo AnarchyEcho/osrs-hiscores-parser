@@ -3,21 +3,19 @@
   "description": "Package for parsing and transforming Old School Runescape Hiscore API results into a JSON format",
   "homepage": "https://github.com/KodeAndre/osrs-hiscores-parser",
   "author": {
-    "name": "Andrè",
+    "name": "Andrè Hagen",
     "url": "https://github.com/KodeAndre"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
+    "@types/node": "^18.7.13",
     "bun-types": "^0.1.8",
-    "typescript": "^4.7.4",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "eslint": "^8.14.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1"
+    "typescript": "^4.7.4"
   },
   "scripts": {
-    "start": "bun run ./src/index.ts"
+    "start": "bun run ./src/index.ts",
+    "build": "npx tsc"
   }
 }
