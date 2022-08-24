@@ -2,7 +2,7 @@
   "name": "osrs-hiscores-parser",
   "main": "./lib/index.js",
   "files": [
-    "./lib"
+    "./lib/*"
   ],
   "types": "./lib/index.d.ts",
   "description": "Package for parsing and transforming Old School Runescape Hiscore API results into a JSON format",
