@@ -1,6 +1,7 @@
 {
   "name": "osrs-hiscores-parser",
   "description": "Package for parsing and transforming Old School Runescape Hiscore API results into a JSON format",
+  "homepage": "https://github.com/KodeAndre/osrs-hiscores-parser",
   "author": {
     "name": "Andrè",
     "url": "https://github.com/KodeAndre"
