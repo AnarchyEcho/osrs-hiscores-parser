@@ -1,7 +1,9 @@
 {
   "name": "osrs-hiscores-parser",
   "main": "./lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "types": "./lib/index.d.ts",
   "description": "Package for parsing and transforming Old School Runescape Hiscore API results into a JSON format",
   "homepage": "https://github.com/KodeAndre/osrs-hiscores-parser",
@@ -9,7 +11,7 @@
     "name": "Andrè Hagen",
     "url": "https://github.com/KodeAndre"
   },
-  "version": "1.0.7",
+  "version": "1.0.8",
   "keywords": [
     "Old School Runescape",
     "OSRS"
