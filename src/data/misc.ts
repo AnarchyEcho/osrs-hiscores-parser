@@ -53,6 +53,8 @@ export const misc = [
 "Theatre of Blood",
 "Theatre of Blood: Hard Mode",
 "Thermonuclear Smoke Devil",
+"Tombs of Amascut",
+"Tombs of Amascut: Expert Mode",
 "TzKal-Zuk",
 "TzTok-Jad",
 "Venenatis",

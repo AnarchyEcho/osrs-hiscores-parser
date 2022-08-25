@@ -11,6 +11,7 @@ module.exports = {
 }
 const arr = [];
 let player = [];
+const combinedArr = skills.concat(misc);
 fs.createReadStream("./sample.txt").pipe(parse({ delimiter: "\n" })
   .on("data", (row) => {
     arr.push(row.toString().split(","));
@@ -21,6 +22,7 @@ fs.createReadStream("./sample.txt").pipe(parse({ delimiter: "\n" })
   .on("end", () => {
     arr.forEach((item, i) => {
       player.push({
+        "name": combinedArr[i],
         "rank": parseInt(item[0]),
         ...(player.length < 24 ? {"level": parseInt(item[1])} : {"score": parseInt(item[1])}),
         ...(item[2] !== undefined ? {"experience": parseInt(item[2])} : {})
