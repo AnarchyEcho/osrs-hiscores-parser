@@ -2,7 +2,6 @@ import { skills, misc } from './data'
 module.exports = {
   parser: async (username: string[]) => {
     const arr = [];
-    const player = [];
     const combinedArr = skills.concat(misc);
 
     if (typeof username !== "string") {
@@ -16,6 +15,7 @@ module.exports = {
       })
     }))
     .then(() => {
+      const player = [];
       arr.forEach((item, i) => {
         player.push({
           "name": combinedArr[i],
