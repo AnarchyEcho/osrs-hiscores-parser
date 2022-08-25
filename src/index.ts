@@ -23,8 +23,8 @@ module.exports = {
           ...(player.length < 24 ? {"level": parseInt(item[1])} : {"score": parseInt(item[1])}),
           ...(item[2] !== undefined ? {"experience": parseInt(item[2])} : {})
         })
-        return player;
       })
     })
+    return player;
   }
 }
