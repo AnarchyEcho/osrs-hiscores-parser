@@ -1,5 +1,3 @@
-import fs from 'fs';
-import { parse } from 'csv-parse';
 import { skills, misc } from './data'
 module.exports = {
   parser: async (username: string[]) => {
