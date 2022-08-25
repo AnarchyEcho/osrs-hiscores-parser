@@ -5,7 +5,7 @@
     "lib"
   ],
   "types": "./lib/index.d.ts",
-  "description": "Package for parsing and transforming Old School Runescape Hiscore API results into a JSON format",
+  "description": "Package that parses and transforms Old School Runescape Hiscore API results into a JSON object.",
   "homepage": "https://github.com/KodeAndre/osrs-hiscores-parser",
   "author": {
     "name": "Andrè Hagen",
@@ -14,7 +14,8 @@
   "version": "1.0.18",
   "keywords": [
     "Old School Runescape",
-    "OSRS"
+    "OSRS",
+    "Runescape"
   ],
   "module": "index.ts",
   "devDependencies": {
