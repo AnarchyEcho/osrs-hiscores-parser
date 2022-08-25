@@ -5,7 +5,7 @@ module.exports = {
     const combinedArr = skills.concat(misc);
     let usersArr = [];
 
-    if (typeof username !== "string") {
+    if (typeof username !== "string" || Array) {
       throw new TypeError("Parser requires one or more usernames as a string or array of strings.");
     }
 
