@@ -9,18 +9,21 @@ Written entirely in TypeScript, it contains it's own type declarations.
 ### yarn
 
 ```shell
-yarn add osrs-hiscores-parser@1.1.0
+yarn add osrs-hiscores-parser@1.2.1
 ```
 ### npm
 
 ```shell
-npm install osrs-hiscores-parser@1.1.0
+npm install osrs-hiscores-parser@1.2.1
 ```
 
 ## Usage
 
 ```typescript
-  import { parser } from 'osrs-hiscores-parser';
-
-  const json = await parser('username');
+import { parser } from 'osrs-hiscores-parser'
+(async function example() {
+  // Can be any case, lower, UPPER or MiXeD.
+  const json = await parser(["echogim", "lynx titan"]);
+  json.forEach((user) => console.log(user))
+})()
 ```
