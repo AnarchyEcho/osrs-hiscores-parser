@@ -9,12 +9,12 @@ Written entirely in TypeScript, it contains it's own type declarations.
 ### yarn
 
 ```shell
-yarn add osrs-hiscores-parser@1.2.1
+yarn add osrs-hiscores-parser
 ```
 ### npm
 
 ```shell
-npm install osrs-hiscores-parser@1.2.1
+npm install osrs-hiscores-parser
 ```
 
 ## Usage
