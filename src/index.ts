@@ -10,7 +10,7 @@ module.exports = {
     const sortLogic = async (rawData) => {
       const player = [];
       const arr = []
-      await rawData.toString().split("\n").filter(emptyItem => emptyItem).forEach((item) => {
+      await rawData.split("\n").filter(emptyItem => emptyItem).forEach((item) => {
           arr.push(item.split(","));
         })
         arr.forEach((item, i) => {
