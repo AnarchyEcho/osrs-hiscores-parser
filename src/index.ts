@@ -1,7 +1,6 @@
 import { skills, misc } from './data'
 process.removeAllListeners('warning')
-module.exports = {
-  parser: async (usernames: string[]) => {
+export async function parser (usernames: string[]) {
     const combinedArr = skills.concat(misc);
     const getRawUserData = async (username) => {
       const res = await fetch(`https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`).then(res => res.text())
@@ -31,4 +30,3 @@ module.exports = {
     }
     return result();
   }
-}
