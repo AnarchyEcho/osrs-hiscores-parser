@@ -3,7 +3,7 @@ process.removeAllListeners('warning')
 export async function parser (usernames: string[]) {
     const combinedArr = skills.concat(misc);
     const getRawUserData = async (username) => {
-      const res = await fetch(`https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`).then(res => res.text())
+      const res = await fetch(`https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`, { mode: 'cors', headers: { 'Access-Control-Allow-Origin':'*' } }).then(res => res.text())
       return res
     }
     const sortLogic = async (rawData) => {
