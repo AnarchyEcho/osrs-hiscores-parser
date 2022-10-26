@@ -1,5 +1,9 @@
 import { skills, misc } from './data'
 process.removeAllListeners('warning')
+/**
+* @param usernames - rsn of the user or users
+* @returns An array containing the users arrays
+*/
 export async function parser (usernames: string[]) {
     const combinedArr = skills.concat(misc);
     const getRawUserData = async (username) => {
@@ -26,7 +30,7 @@ export async function parser (usernames: string[]) {
       const res = await Promise.all(usernames.map(async (user) => (
         await sortLogic(await getRawUserData(user))
       )))
-      return res;
+      return res[0];
     }
     return result();
   }
