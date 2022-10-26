@@ -30,7 +30,7 @@ export async function parser (usernames: string[]) {
       const res = await Promise.all(usernames.map(async (user) => (
         await sortLogic(await getRawUserData(user))
       )))
-      return res[0];
+      return res;
     }
     return result();
   }
