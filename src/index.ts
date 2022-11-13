@@ -10,7 +10,7 @@ export async function parser (usernames: string[]) {
     const res = await fetch(`https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`, { mode: 'no-cors', headers: { 'Access-Control-Allow-Origin':'*' } }).then(res => res)
     return res.text();
   }
-  const sortLogic = (rawData) => {
+  const sortLogic = (rawData: string) => {
     const player = [];
     const arr = []
     rawData.toString().split("\n").filter(emptyItem => emptyItem).forEach((item) => {
@@ -26,8 +26,7 @@ export async function parser (usernames: string[]) {
       })
     return player
   }
-  return Promise.all([usernames.map(async (user) => (
-      sortLogic(await getRawUserData(user))
-    ))
-  ])
+  return Promise.all(usernames.map(async (user) => (
+    sortLogic(await getRawUserData(user))
+  )))
 }
