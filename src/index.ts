@@ -25,8 +25,9 @@ export async function parser(usernames: string[]) {
     })
     return player
   }
-  const res = await Promise.all(usernames.map(async (user) => {
+  let res: any[];
+  await Promise.all(usernames.map(async (user) => {
     return sortLogic(await getRawUserData(user).then(x => x))
-  }))
+  })).then(x => res.push(x))
   return res;
 }
