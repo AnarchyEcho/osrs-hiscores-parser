@@ -1,5 +1,4 @@
 import { skills, misc } from './data'
-process.removeAllListeners('warning')
 /**
 * @param usernames - rsn of the user or users
 * @returns An array containing the users arrays
