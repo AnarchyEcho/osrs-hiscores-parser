@@ -25,7 +25,13 @@ export async function parser(usernames: string[]) {
     })
     return player
   }
-  return await Promise.all(usernames.map(async (user) => {
-    return sortLogic(await getRawUserData(user).then(x => { return x }))
-  })).then(x => { return x })
+  const promises = usernames.map(async (user) => {
+    return sortLogic(await getRawUserData(user).then(x => { return x; }));
+  })
+  try {
+    return await Promise.allSettled(promises);
+  } catch (e) {
+    console.log(`parser failed because: ${e}`)
+    return e;
+  }
 }
