@@ -1,21 +1,25 @@
 import { skills, misc } from './data'
+const getRawUserData = async (username: string) => {
+  const response = await fetch(`https://cors-anywhere-apqk.onrender.com/https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`)
+  const users = await response.text()
+  return users;
+}
+
 /**
 * @param usernames - rsn of the user or users
-* @returns An array containing the users arrays
+* @returns An array containing an object for each user
 */
 export async function parser(usernames: string[]) {
   const combinedArr = skills.concat(misc);
-  const getRawUserData = async (username: string) => {
-    const res = await fetch(`https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`, { mode: 'no-cors', headers: { 'Access-Control-Allow-Origin': '*' } }).then(res => res)
-    return res.text();
-  }
-  const sortLogic = (rawData: string) => {
-    const player = [];
-    const arr = []
+
+  const formatUserData = (rawData: string) => {
+    const player: any[] = [];
+    const arr: any[] = []
     rawData.toString().split("\n").filter(emptyItem => emptyItem).forEach((item) => {
       arr.push(item.split(","));
     })
-    arr.forEach((item, i) => {
+
+    arr.forEach((item: any, i: number) => {
       player.push({
         "name": combinedArr[i],
         "rank": parseInt(item[0]),
@@ -25,13 +29,7 @@ export async function parser(usernames: string[]) {
     })
     return player
   }
-  const promises = usernames.map(async (user) => {
-    return sortLogic(await getRawUserData(user).then(x => { return x; }));
-  })
-  try {
-    return await Promise.allSettled(promises);
-  } catch (e) {
-    console.log(`parser failed because: ${e}`)
-    return e;
-  }
+  return await Promise.all(usernames.map(async (username: string) => {
+    return { name: username, data: formatUserData(await getRawUserData(username)) };
+  }))
 }
