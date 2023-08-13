@@ -1,9 +1,4 @@
 import { skills, misc } from './data'
-const getRawUserData = async (username: string) => {
-  const response = await fetch(`https://cors-anywhere-apqk.onrender.com/https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`)
-  const users = await response.text()
-  return users;
-}
 
 /**
 * @param usernames - rsn of the user or users
@@ -11,6 +6,11 @@ const getRawUserData = async (username: string) => {
 */
 export async function parser(usernames: string[]) {
   const combinedArr = skills.concat(misc);
+  const getRawUserData = async (username: string) => {
+    const response = await fetch(`https://cors-anywhere-apqk.onrender.com/https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${username}`)
+    const users = await response.text()
+    return users;
+  }
 
   const formatUserData = (rawData: string) => {
     const player: any[] = [];
