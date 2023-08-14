@@ -32,13 +32,13 @@ import { parser } from 'osrs-hiscores-parser'
 
 ### React
 ```tsx
-  import { parser } from 'osrs-hiscores-parser'
+import { parser } from 'osrs-hiscores-parser'
 
-  const [json, setJson] = React.useState<any[]>();
-  useEffect(() => {
-    (async () => {
-      !json && setJson(await parser(['echogim', 'emerald12']))
-    })()
-    console.log(json)
-  }, [json])
+const [json, setJson] = React.useState<any[]>();
+useEffect(() => {
+  (async () => {
+    !json && setJson(await parser(['echogim', 'emerald12']))
+  })()
+  console.log(json)
+}, [json])
 ```
