@@ -51,6 +51,7 @@ export const misc = [
   "Phantom Muspah",
   "Obor",
   "Sarachnis",
+  "Scurrius",
   "Scorpia",
   "Skotizo",
   "Spindel",
