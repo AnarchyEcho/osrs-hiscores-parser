@@ -1,3 +1,5 @@
+# DISCONTINUED
+
 # osrs-hiscores-parser
 
 The purpose of this package is to parse and transform Old School Runescape Hiscore API results and return it as a JSON object.
